@@ -45,8 +45,7 @@
 <body>
     <div class="navigation">
         <!-- 导航栏 -->
-        <a href="https://ale823.wang/letter/">首页</a> | 
-        <a href="#">上传相册</a> | 
+        <a href="https://ale823.wang">首页</a> | 
 		<a href="#">留言板</a> |
         <a href="https://ale823.wang/love.timer/">热恋计时器</a>
 		<a href="https://ale823.wang/letter/">见字如面</a>
@@ -236,28 +235,7 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-document.addEventListener("DOMContentLoaded", function() {
-  const lazyImages = [].slice.call(document.querySelectorAll("img.lazy-load"));
 
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.classList.remove("lazy-load");
-          lazyImageObserver.unobserve(lazyImage);
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage);
-    });
-  } else {
-    // Fallback for older browsers
-  }
-});
 const images = ['test1.jpg', 'test2.jpg', 'test3.jpg','test4.jpg', 'test5.jpg',  /* other image filenames */];
 let currentImageIndex = 0;
 
