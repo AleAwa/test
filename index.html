@@ -219,8 +219,8 @@
 // 页面加载时立即更新一次情话
     updateLovePhrase();
 
-    // 每隔5秒更新一次情话
-    setInterval(updateLovePhrase, 5000);
+    // 每隔6秒更新一次情话
+    setInterval(updateLovePhrase, 6000);
         function uploadImage() {
             var input = document.getElementById('imageInput');
             if (input.files && input.files[0]) {
@@ -236,12 +236,12 @@
             }
         }
 
-const images = ['test1.jpg', 'test2.jpg', 'test3.jpg','test4.jpg', 'test5.jpg',  /* other image filenames */];
+const images = ['test1.jpg', 'test2.jpg', 'test3.jpg','test4.jpg', 'test5.jpg','test6.jpg', 'test7.jpg', 'test8.jpg','test9.jpg', 'test10.jpg', 'test11.jpg', 'test12.jpg', /* other image filenames */];
 let currentImageIndex = 0;
 
 window.onload = () => {
     changeImage();
-    setInterval(changeImage, 10000);
+    setInterval(changeImage, 6000);
 };
 
 function changeImage() {
