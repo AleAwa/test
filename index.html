@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<link rel="preload" href="test1.jpg" as="image">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>情侣空间</title>
     <style>
+        /* 基础样式 */
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #f0e4d7, #f5f5f5);
+            margin: 0;
+            padding: 0;
         }
         .navigation {
             background-color: #ffe0f0;
@@ -26,44 +28,43 @@
             font-style: italic;
             color: #ff69b4;
         }
-        .image-upload {
-            margin-bottom: 20px;
+        .image-upload, .sample-images {
+            text-align: center;
         }
         .image-display {
+            max-width: 100%; /* 确保图片在容器内 */
+            height: auto;
             margin-bottom: 20px;
         }
- 
-.sample-images img {
-    max-width: 300px; /* 控制图片最大宽度 */
-    height: auto; /* 保持图片的纵横比 */
-    margin-bottom: 10px;
-    border-radius: 4px;
-}
 
-      
+        /* 媒体查询 - 针对较小的屏幕 */
+        @media (max-width: 600px) {
+            .content, .navigation {
+                margin: 10px;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="navigation">
-        <!-- 导航栏 -->
+        <!-- 导航栏链接 -->
         <a href="https://ale823.wang">首页</a> | 
-		<a href="#">留言板</a> |
-        <a href="https://ale823.wang/love.timer/">热恋计时器</a>|
-		<a href="https://ale823.wang/letter/">见字如面</a>
+        <a href="#">留言板</a> |
+        <a href="https://ale823.wang/love.timer/">热恋计时器</a> |
+        <a href="https://ale823.wang/letter/">见字如面</a>
     </div>
     <div class="content">
         <h1 class="romantic-phrase" id="romanticPhrase">我是隗钟乐至上主义者</h1>
-
- <div class="image-upload">
+        <!-- 图片上传区域 -->
+        <div class="image-upload">
             <input type="file" id="imageInput" accept="image/*">
             <button onclick="uploadImage()">上传图片</button>
         </div>
-		
-		     <div class="sample-images">
- <button onclick="uploadImage()">上传图片</button>
-        </div>
-        <div class="sample-images" id="image-display">
-            <!-- 图片显示区域 -->
+        <div class="sample-images">
+            <div id="image-display">
+                <!-- 图片展示区域 -->
+            </div>
         </div>
     </div>
 
