@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<link rel="preload" href="test1.jpg" as="image">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>情侣空间</title>
     <style>
-        /* 基础样式 */
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #f0e4d7, #f5f5f5);
-            margin: 0;
-            padding: 0;
         }
         .navigation {
             background-color: #ffe0f0;
@@ -28,45 +26,45 @@
             font-style: italic;
             color: #ff69b4;
         }
-        .image-upload, .sample-images {
-            text-align: center;
-        }
-        .image-display {
-            max-width: 100%; /* 确保图片在容器内 */
-            height: auto;
+        .image-upload {
             margin-bottom: 20px;
         }
-
-        /* 媒体查询 - 针对较小的屏幕 */
-        @media (max-width: 600px) {
-            .content, .navigation {
-                margin: 10px;
-                padding: 10px;
-            }
+        .image-display {
+            margin-bottom: 20px;
         }
+ 
+.sample-images img {
+    max-width: 300px; /* 控制图片最大宽度 */
+    height: auto; /* 保持图片的纵横比 */
+    margin-bottom: 10px;
+    border-radius: 100px;
+}
+
+      
     </style>
 </head>
 <body>
     <div class="navigation">
-        <!-- 导航栏链接 -->
+        <!-- 导航栏 -->
         <a href="https://ale823.wang">首页</a> | 
-        <a href="#">留言板</a> |
-        <a href="https://ale823.wang/love.timer/">热恋计时器</a> |
-        <a href="https://ale823.wang/letter/">见字如面</a>
+		<a href="#">留言板</a> |
+        <a href="https://ale823.wang/love.timer/">热恋计时器</a>|
+		<a href="https://ale823.wang/letter/">见字如面</a>
     </div>
     <div class="content">
         <h1 class="romantic-phrase" id="romanticPhrase">我是隗钟乐至上主义者</h1>
-        <!-- 图片上传区域 -->
-        <div class="image-upload">
+
+ <div class="image-upload">
             <input type="file" id="imageInput" accept="image/*">
             <button onclick="uploadImage()">上传图片</button>
         </div>
-        <div class="sample-images">
-            <div id="image-display">
-                <!-- 图片展示区域 -->
-            </div>
-        </div>
+		
+		     <div class="sample-images">
+            <!-- 示例图片 -->
+<div id="image-container">
+        <img id="image-display" src="" alt="Image Gallery">
     </div>
+     
 
     <script>
  const lovePhrases = [
@@ -239,7 +237,7 @@
             }
         }
 
-const images = [ 'test2.jpg', 'test3.jpg','test4.jpg', 'test5.jpg','test6.jpg', 'test7.jpg', 'test8.jpg','test9.jpg', 'test10.jpg', 'test11.jpg', 'test12.jpg', /* other image filenames */];
+const images = ['test1.jpg', 'test2.jpg', 'test3.jpg','test4.jpg', 'test5.jpg','test6.jpg', 'test7.jpg', 'test8.jpg','test9.jpg', 'test10.jpg', 'test11.jpg', 'test12.jpg', /* other image filenames */];
 let currentImageIndex = 0;
 
 window.onload = () => {
